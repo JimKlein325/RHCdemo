@@ -11,6 +11,7 @@ import { RXDataComponent } from './rx-data.component';
 import { ValuePropComponent } from './value-prop.component';
 import { PatientSummaryComponent } from './patient-summary.component';
 import { WellnessMeasuresComponent } from './wellness-measures.component';
+import { RecommendationTableComponent } from './recommendation-table.component';
 
 @NgModule({
   imports:      [ 
@@ -25,7 +26,8 @@ import { WellnessMeasuresComponent } from './wellness-measures.component';
     RXDataComponent,
     ValuePropComponent,
     PatientSummaryComponent,
-    WellnessMeasuresComponent
+    WellnessMeasuresComponent,
+    RecommendationTableComponent
    ],
   bootstrap:    [ AppComponent ]
 })

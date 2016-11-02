@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
     template: `
         <h1>{{patientSum.physicianName}}</h1>
         <p><strong>{{patientSum.patientName}}</strong>, {{patientSum.sumText}}</p>
-        <hr />
     `
 })
 
