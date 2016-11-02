@@ -5,14 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }  from './app.component';
 import { ChecklistComponent } from './checklist.component';
+import { CaseManagementComponent } from './casemanagement.component';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   imports:      [ 
     BrowserModule, 
     AppRoutingModule
      ],
-  declarations: [ AppComponent,
-  ChecklistComponent
+  declarations: [ 
+    AppComponent,
+    ChecklistComponent,
+    CaseManagementComponent,
+    HomeComponent
    ],
   bootstrap:    [ AppComponent ]
 })
