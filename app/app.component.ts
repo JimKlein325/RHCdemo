@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
                     <a routerLink='/' routerLinkActive='active'>Home</a>
                     <a routerLink='/checklist' routerLinkActive='active'>Checklist</a>
                 </nav>
-                <router-outlet></router-outlet>
+                <div class='main'>
+                    <router-outlet></router-outlet>
+                </div>
                 `
 })
 export class AppComponent {
