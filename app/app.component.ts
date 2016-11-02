@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as d3 from 'd3';
 
 @Component({
     moduleId: module.id,
@@ -15,6 +16,8 @@ import { Component, OnInit } from '@angular/core';
                 </div>
                 `
 })
-export class AppComponent {
-
+export class AppComponent implements OnInit {
+    ngOnInit(): void {
+        console.log(d3);
+    }
  }
