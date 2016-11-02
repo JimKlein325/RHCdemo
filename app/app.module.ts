@@ -7,6 +7,7 @@ import { AppComponent }  from './app.component';
 import { ChecklistComponent } from './checklist.component';
 import { CaseManagementComponent } from './casemanagement.component';
 import { HomeComponent } from './home.component';
+import { RXDataComponent } from './rx-data.component';
 
 @NgModule({
   imports:      [ 
@@ -17,7 +18,8 @@ import { HomeComponent } from './home.component';
     AppComponent,
     ChecklistComponent,
     CaseManagementComponent,
-    HomeComponent
+    HomeComponent,
+    RXDataComponent
    ],
   bootstrap:    [ AppComponent ]
 })
