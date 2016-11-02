@@ -8,6 +8,7 @@ import { ChecklistComponent } from './checklist.component';
 import { CaseManagementComponent } from './casemanagement.component';
 import { HomeComponent } from './home.component';
 import { RXDataComponent } from './rx-data.component';
+import { ValuePropComponent } from './value-prop.component';
 
 @NgModule({
   imports:      [ 
@@ -19,7 +20,8 @@ import { RXDataComponent } from './rx-data.component';
     ChecklistComponent,
     CaseManagementComponent,
     HomeComponent,
-    RXDataComponent
+    RXDataComponent,
+    ValuePropComponent
    ],
   bootstrap:    [ AppComponent ]
 })

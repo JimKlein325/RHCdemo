@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
                     <a routerLink='/checklist' routerLinkActive='active'>Checklist</a>
                     <a routerLink='/casemanagement' routerLinkActive='active'>Case Management</a>
                     <a routerLink='/rxdata' routerLinkActive='active'>RX Data</a>
+                    <a routerLink='/valueprop' routerLinkActive='active'>Value Proposition</a>
                 </nav>
                 <div class='main'>
                     <router-outlet></router-outlet>
