@@ -46,14 +46,20 @@ my-app {
   display: flex;
 }
 nav { 
-  float: left;
   background-color: black;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 25vw;
 }
-
+@media (max-width: 500px) {
+  my-app{
+    flex-direction: column;
+  }
+  nav{
+    flex-direction: row;
+    height: auto;
+  }
+}
 nav a {
   padding: 1em;
   color: white;
