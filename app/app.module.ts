@@ -9,6 +9,7 @@ import { CaseManagementComponent } from './casemanagement.component';
 import { HomeComponent } from './home.component';
 import { RXDataComponent } from './rx-data.component';
 import { ValuePropComponent } from './value-prop.component';
+import { PatientSummaryComponent } from './patient-summary.component';
 
 @NgModule({
   imports:      [ 
@@ -21,7 +22,8 @@ import { ValuePropComponent } from './value-prop.component';
     CaseManagementComponent,
     HomeComponent,
     RXDataComponent,
-    ValuePropComponent
+    ValuePropComponent,
+    PatientSummaryComponent
    ],
   bootstrap:    [ AppComponent ]
 })

@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { PatientSummaryComponent } from './patient-summary.component';
+
 
 @Component({
     moduleId: module.id,
-    selector: 'checklist',
-    template: '<patient-summary></patient-summary>'
+    selector: 'patient-summary',
+    template: `
+        <h1>{{patientSum.physicianName}}</h1>
+        <p><strong>{{patientSum.patientName}}</strong>, {{patientSum.sumText}}</p>
+        <hr />
+    `
 })
 
 
-export class ChecklistComponent {
+export class PatientSummaryComponent {
     patientSum = {
         physicianName: "Marcus Welby, MD",
         patientName: "Carli Jones",
