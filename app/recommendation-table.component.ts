@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
     template: `recommendation table`
 })
 export class RecommendationTableComponent {
-    
+
 }
