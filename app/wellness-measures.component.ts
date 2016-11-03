@@ -17,7 +17,6 @@ export class WellnessMeasuresComponent implements OnInit{
     ]
 
     ngOnInit(): void {
-        console.log(this.data.map(function(d) { return d.metricName }))
         //Draw D3 Graph
             let margin = {
                 left: 200,
@@ -27,7 +26,6 @@ export class WellnessMeasuresComponent implements OnInit{
             }
             let width = 400,
                 height = 300;
-                    console.log(width - margin.left - margin.right)
 
             let graph = d3.select(".wellness-measures")
                 .append("svg")
@@ -35,13 +33,16 @@ export class WellnessMeasuresComponent implements OnInit{
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            // Add scales for the axes (ignore intellisense, this works fine)
             let xScale = d3.scaleLinear()
-                .domain(0, 100)
-                .range([0, width - margin.left - margin.right]);
+                .domain([0, 100])
+                .range([0, width]);
             //categorical scale
             let catScale = d3.scaleBand()
                 .domain(this.data.map(function(d) { return d.metricName }))
-                .range([0, width - margin.top - margin.bottom]);
+                .range([0, height])
+                .paddingInner([0.4])
+                .paddingOuter([0.2]);
             // Define Axes
             let yAxis = d3.axisLeft()
                 .scale(catScale)
@@ -49,8 +50,15 @@ export class WellnessMeasuresComponent implements OnInit{
             graph.append("g")
                 .attr("class", "axis")
                 .call(yAxis);
-            // Add scales for the axes
             
-            // 
+            // Draw rectangles
+            graph.selectAll("rect")
+                .data(this.data)
+                .enter().append("rect")
+                .attr("height", catScale.bandwidth())
+                .attr("y", function(d) {
+                    return catScale(d.metricName)
+                })
+                .attr("width", function(d) { return xScale(d.metricScore) })
         }
 }
