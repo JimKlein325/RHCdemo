@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -9,11 +10,13 @@ import { CaseManagementComponent } from './casemanagement.component';
 import { HomeComponent } from './home.component';
 import { RXDataComponent } from './rx-data.component';
 import { ValuePropComponent } from './value-prop.component';
+import { SelfAssessmentComponent } from './self-assessment.component';
 
 @NgModule({
   imports:      [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
      ],
   declarations: [
     AppComponent,
@@ -21,7 +24,8 @@ import { ValuePropComponent } from './value-prop.component';
     CaseManagementComponent,
     HomeComponent,
     RXDataComponent,
-    ValuePropComponent
+    ValuePropComponent,
+    SelfAssessmentComponent
    ],
   bootstrap:    [ AppComponent ]
 })
