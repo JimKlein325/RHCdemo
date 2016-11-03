@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }  from './app.component';
 import { ChecklistComponent } from './checklist.component';
-import { CaseManagementComponent } from './casemanagement.component';
+import { CaseManagementComponent } from './CaseManagement/casemanagement.component';
 import { HomeComponent } from './home.component';
 import { RXDataComponent } from './rx-data.component';
 import { ValuePropComponent } from './value-prop.component';
