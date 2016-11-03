@@ -12,7 +12,9 @@ import { RxDataService } from './rx-data.service';
 
       <ul class='rx-tabular'>
         <li *ngFor='let record of rxdata'>
-        {{record.rxName}}, {{record.ptId}}, {{record.drId}}, {{record.state}}, {{record.city}}, {{record.zip}}
+          {{record.rxName}}, {{record.ptId}}, {{record.drId}}, {{record.state}}, {{record.city}}, {{record.zip}}
+        </li>
+      </ul>
     `,
     styles: [`
       .rx-tabular {
