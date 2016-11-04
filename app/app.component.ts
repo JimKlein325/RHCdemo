@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -16,8 +16,6 @@ import * as d3 from 'd3';
                 </div>
                 `
 })
-export class AppComponent implements OnInit {
-    ngOnInit(): void {
-        console.log(d3);
-    }
+export class AppComponent {
+
  }
