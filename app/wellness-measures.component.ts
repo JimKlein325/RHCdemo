@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
+import * as d3Scale from 'd3-scale';
+import * as d3Axis from 'd3-axis';
 
 @Component({
     selector: 'wellness-measures',
@@ -34,17 +36,17 @@ export class WellnessMeasuresComponent implements OnInit{
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
             // Add scales for the axes (ignore intellisense, this works fine)
-            let xScale = d3.scaleLinear()
+            let xScale = d3Scale.scaleLinear()
                 .domain([0, 100])
                 .range([0, width]);
             //categorical scale
-            let catScale = d3.scaleBand()
+            let catScale = d3Scale.scaleBand()
                 .domain(this.data.map(function(d) { return d.metricName }))
                 .range([0, height])
-                .paddingInner([0.4])
-                .paddingOuter([0.2]);
+                .paddingInner(0.4)
+                .paddingOuter(0.2);
             // Define Axes
-            let yAxis = d3.axisLeft()
+            let yAxis = d3Axis.axisLeft()
                 .scale(catScale)
             
             graph.append("g")
