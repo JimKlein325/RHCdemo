@@ -46,12 +46,12 @@ export class WellnessMeasuresComponent implements OnInit{
                 .paddingInner(0.4)
                 .paddingOuter(0.2);
             // Define Axes
-            let yAxis = d3Axis.axisLeft()
-                .scale(catScale)
+            // let yAxis = d3.axisLeft()
+            //     .scale(catScale)
             
-            graph.append("g")
-                .attr("class", "axis")
-                .call(yAxis);
+            // graph.append("g")
+            //     .attr("class", "axis")
+            //     .call(yAxis);
             
             // Draw rectangles
             graph.selectAll("rect")
