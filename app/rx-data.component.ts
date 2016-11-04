@@ -16,14 +16,6 @@ import { RxDataService } from './rx-data.service';
         </li>
       </ul>
     `,
-    styles: [`
-      .rx-tabular {
-        list-style-type: none;
-      }
-      .drugClass {
-        color: steelblue;
-      }
-    `],
     providers: [RxDataService]
 })
 export class RXDataComponent implements OnInit {
