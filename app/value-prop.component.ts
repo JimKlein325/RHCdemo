@@ -6,12 +6,12 @@ import * as d3 from 'd3';
   selector: 'value-prop',
   template: `
     <div id='recentia' class='bar'></div>
-    <br><br><br>
+    <br>
     <div id='competitor' class='bar'></div>
-    <br><br><br>
+    <br>
     <self-assessment (onSubmit)='updateResults($event)'></self-assessment>
   `,
-  styles: ['.bar { width: 300px; height: 70px; }']
+  styles: ['.bar { width: 300px; }']
 })
 export class ValuePropComponent {
   public assessmentResults: any;
