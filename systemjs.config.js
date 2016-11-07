@@ -36,7 +36,8 @@
       'd3-format': 'npm:d3-format/build/d3-format.min.js',
       'd3-time': 'npm:d3-time/build/d3-time.min.js',
       'd3-color': 'npm:d3-color/build/d3-color.min.js',
-      'd3-time-format': 'npm:d3-time-format/build/d3-time-format.min.js'
+      'd3-time-format': 'npm:d3-time-format/build/d3-time-format.min.js',
+      'moment': 'npm:moment/moment.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

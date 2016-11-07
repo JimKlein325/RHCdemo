@@ -36,7 +36,6 @@
     "@angular/upgrade": "~2.1.2",
     "@types/d3-axis": "^1.0.5",
     "@types/d3-scale": "^1.0.4",
-    "@types/moment": "^2.13.0",
     "angular-in-memory-web-api": "~0.1.13",
     "core-js": "^2.4.1",
     "d3": "^4.3.0",
