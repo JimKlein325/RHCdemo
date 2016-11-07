@@ -40,27 +40,30 @@ export class WellnessMeasuresComponent implements OnInit{
                 .domain([0, 100])
                 .range([0, width]);
             //categorical scale
+            let categories = this.data.map(function(d) { return d.metricName });
             let catScale = d3Scale.scaleBand()
-                .domain(this.data.map(function(d) { return d.metricName }))
+                .domain(categories)
                 .range([0, height])
                 .paddingInner(0.4)
                 .paddingOuter(0.2);
+
             // Define Axes
-            // let yAxis = d3.axisLeft()
-            //     .scale(catScale)
-            
-            // graph.append("g")
-            //     .attr("class", "axis")
-            //     .call(yAxis);
+            let yAxis = d3Axis.axisLeft(catScale)
+                .tickSize(0);
+
+            let vertGuide = graph.append("g")
+                .attr("class", "axis")
+            yAxis(vertGuide);
             
             // Draw rectangles
             graph.selectAll("rect")
                 .data(this.data)
                 .enter().append("rect")
                 .attr("height", catScale.bandwidth())
+                .attr("fill", "blue")
                 .attr("y", function(d) {
-                    return catScale(d.metricName)
+                    return catScale(d.metricName);
                 })
-                .attr("width", function(d) { return xScale(d.metricScore) })
+                .attr("width", function(d) { return xScale(d.metricScore) });
         }
 }
