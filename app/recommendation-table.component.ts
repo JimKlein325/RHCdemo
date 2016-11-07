@@ -17,7 +17,7 @@ import * as moment from 'moment';
                 <td><input type="checkbox"></td>
                 <td><input type="checkbox" checked>{{datum.recOrder}}</td>
                 <td>{{datum.orderByString}}</td>
-                <td><a href={{datum.problemUrl}}>{{datum.problem}}</a></td>
+                <td><a href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{datum.problem}}">{{datum.problem}}</a></td>
                 <td>{{datum.cqmName}}</td>
                 <td>{{datum.guidelinePublisher}}</td>
             </tr>
@@ -28,7 +28,7 @@ export class RecommendationTableComponent implements OnInit {
     data = [
         {
             recOrder: "Hemoblobin A1C",
-            orderBy: Date.parse("June 15, 2016"),
+            orderBy: Date.parse("November 20, 2016"),
             orderByString: "",
             problem: "Diabetes mellitus II",
             //We will talk later about how to implement
@@ -39,55 +39,7 @@ export class RecommendationTableComponent implements OnInit {
             guidelinePublisherUrl: ""
         },
         {
-            recOrder: "Hemoblobin A1C",
-            orderBy: Date.parse("June 15, 2016"),
-            orderByString: "",
-            problem: "Diabetes mellitus II",
-            //We will talk later about how to implement
-            //the dynamic routing in the problemUrl
-            cqmName: "CMS122",
-            cqmUrl: "",
-            guidelinePublisher: "CMS",
-            guidelinePublisherUrl: ""
-        },
-        {
-            recOrder: "Hemoblobin A1C",
-            orderBy: Date.parse("June 15, 2016"),
-            orderByString: "",
-            problem: "Diabetes mellitus II",
-            //We will talk later about how to implement
-            //the dynamic routing in the problemUrl
-            cqmName: "CMS122",
-            cqmUrl: "",
-            guidelinePublisher: "CMS",
-            guidelinePublisherUrl: ""
-        },
-        {
-            recOrder: "Hemoblobin A1C",
-            orderBy: Date.parse("June 15, 2016"),
-            orderByString: "",
-            problem: "Diabetes mellitus II",
-            //We will talk later about how to implement
-            //the dynamic routing in the problemUrl
-            cqmName: "CMS122",
-            cqmUrl: "",
-            guidelinePublisher: "CMS",
-            guidelinePublisherUrl: ""
-        },
-        {
-            recOrder: "Hemoblobin A1C",
-            orderBy: Date.parse("June 15, 2016"),
-            orderByString: "",
-            problem: "Diabetes mellitus II",
-            //We will talk later about how to implement
-            //the dynamic routing in the problemUrl
-            cqmName: "CMS122",
-            cqmUrl: "",
-            guidelinePublisher: "CMS",
-            guidelinePublisherUrl: ""
-        },
-        {
-            recOrder: "Hemoblobin A1C",
+            recOrder: "Modify treatment plan to lower HbA1C",
             orderBy: Date.parse("November 7, 2016"),
             orderByString: "",
             problem: "Diabetes mellitus II",
@@ -99,13 +51,61 @@ export class RecommendationTableComponent implements OnInit {
             guidelinePublisherUrl: ""
         },
         {
-            recOrder: "Hemoblobin A1C",
-            orderBy: Date.parse("June 15, 2016"),
+            recOrder: "Funduscopic exam",
+            orderBy: Date.parse("November 20, 2016"),
             orderByString: "",
             problem: "Diabetes mellitus II",
             //We will talk later about how to implement
             //the dynamic routing in the problemUrl
-            cqmName: "CMS122",
+            cqmName: "CMS142",
+            cqmUrl: "",
+            guidelinePublisher: "CMS",
+            guidelinePublisherUrl: ""
+        },
+        {
+            recOrder: "Diabetic foot exam",
+            orderBy: Date.parse("November 20, 2016"),
+            orderByString: "",
+            problem: "Diabetes mellitus II",
+            //We will talk later about how to implement
+            //the dynamic routing in the problemUrl
+            cqmName: "CMS123",
+            cqmUrl: "",
+            guidelinePublisher: "CMS",
+            guidelinePublisherUrl: ""
+        },
+        {
+            recOrder: "Modify treatment plan to lower LDL",
+            orderBy: Date.parse("November 7, 2016"),
+            orderByString: "",
+            problem: "Diabetes mellitus II",
+            //We will talk later about how to implement
+            //the dynamic routing in the problemUrl
+            cqmName: "CMS163",
+            cqmUrl: "",
+            guidelinePublisher: "CMS",
+            guidelinePublisherUrl: ""
+        },
+        {
+            recOrder: "Start beta blocker therapy",
+            orderBy: Date.parse("November 7, 2016"),
+            orderByString: "",
+            problem: "Congestive heart failure",
+            //We will talk later about how to implement
+            //the dynamic routing in the problemUrl
+            cqmName: "CMS144",
+            cqmUrl: "",
+            guidelinePublisher: "CMS",
+            guidelinePublisherUrl: ""
+        },
+        {
+            recOrder: "Screening mammogram",
+            orderBy: Date.parse("June 15, 2016"),
+            orderByString: "",
+            problem: "Preventive medicine",
+            //We will talk later about how to implement
+            //the dynamic routing in the problemUrl
+            cqmName: "CMS125",
             cqmUrl: "",
             guidelinePublisher: "CMS",
             guidelinePublisherUrl: ""
