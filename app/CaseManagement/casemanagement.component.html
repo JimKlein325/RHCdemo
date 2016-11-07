@@ -1,6 +1,6 @@
 <h1>Case Search</h1>
 <div>
-    <form (ngSubmit)="getFormValue(disease)"  #form="ngForm" >
+    <form (ngSubmit)="getDiseaseInput(disease)"  #form="ngForm" >
         <div class="form-group">
             <label for="disease">Look up Patients for disease</label>
             <input type="text" required name="disease" #disease ngModel placeholder="enter disease here">
