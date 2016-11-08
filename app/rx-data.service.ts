@@ -5,7 +5,7 @@ import { RXDATA } from './mock-rx-data';
 
 @Injectable()
 export class RxDataService {
-  getRxData(): RxRecord[] {
-    return RXDATA;
+  getRxData(): Promise<RxRecord[]> {
+    return Promise.resolve(RXDATA);
   }
 }

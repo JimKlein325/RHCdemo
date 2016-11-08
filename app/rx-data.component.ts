@@ -8,7 +8,7 @@ import { RxDataService } from './rx-data.service';
     template: `
       <h1>{{title}}</h1>
 
-      <h3>Drug Class: <span class='drugClass'>{{rxdata[0].rxClass}}</span></h3>
+      <h3>Drug Class: <span class='drugClass'>Oncologics</span></h3>
 
       <ul class='rx-tabular'>
         <li *ngFor='let record of rxdata'>
@@ -28,8 +28,14 @@ export class RXDataComponent implements OnInit {
     this.getRxData();
   }
 
+  /* service - pre-promise -- working */
+  // getRxData(): void {
+    // this.rxdata = this.rxDataService.getRxData();
+    // }
+
+  /* service w/promise */
   getRxData(): void {
-    this.rxdata = this.rxDataService.getRxData();
+    this.rxDataService.getRxData().then(rxdata => this.rxdata = rxdata);
   }
 
 }

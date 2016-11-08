@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule }   from '@angular/forms';
+import { RxDataService } from './rx-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -33,6 +34,7 @@ import { SelfAssessmentComponent } from './self-assessment.component';
     RecommendationTableComponent,
     SelfAssessmentComponent
    ],
-  bootstrap:    [ AppComponent ]
+   providers: [ RxDataService ],
+   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
