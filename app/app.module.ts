@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -12,13 +13,15 @@ import { ValuePropComponent } from './value-prop.component';
 import { PatientSummaryComponent } from './patient-summary.component';
 import { WellnessMeasuresComponent } from './wellness-measures.component';
 import { RecommendationTableComponent } from './recommendation-table.component';
+import { SelfAssessmentComponent } from './self-assessment.component';
 
 @NgModule({
-  imports:      [ 
-    BrowserModule, 
-    AppRoutingModule
+  imports:      [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
      ],
-  declarations: [ 
+  declarations: [
     AppComponent,
     ChecklistComponent,
     CaseManagementComponent,
@@ -27,7 +30,8 @@ import { RecommendationTableComponent } from './recommendation-table.component';
     ValuePropComponent,
     PatientSummaryComponent,
     WellnessMeasuresComponent,
-    RecommendationTableComponent
+    RecommendationTableComponent,
+    SelfAssessmentComponent
    ],
   bootstrap:    [ AppComponent ]
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 import * as d3Scale from 'd3-scale';
-import * as d3Axis from 'd3-axis';
+// import * as d3Axis from 'd3-axis';
 
 @Component({
     selector: 'wellness-measures',
@@ -48,11 +48,11 @@ export class WellnessMeasuresComponent implements OnInit{
             // Define Axes
             // let yAxis = d3.axisLeft()
             //     .scale(catScale)
-            
+
             // graph.append("g")
             //     .attr("class", "axis")
             //     .call(yAxis);
-            
+
             // Draw rectangles
             graph.selectAll("rect")
                 .data(this.data)
