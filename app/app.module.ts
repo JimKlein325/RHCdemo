@@ -27,6 +27,7 @@ import {CaseManagementService} from './CaseManagement/casemanagement.service';
     HomeComponent,
     RXDataComponent,
     ValuePropComponent
+    
    ],
    providers: [CaseManagementService],
   bootstrap:    [ AppComponent ]

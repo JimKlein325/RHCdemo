@@ -9,3 +9,10 @@
         
     </form>
 </div>
+<div>
+    <h2>Patient List</h2>
+    <ul *ngIf="patientList">
+        
+        <li  *ngFor="let patient of patientList">Name: {{patient.name}}</li>
+    </ul>
+</div>
