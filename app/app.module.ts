@@ -11,14 +11,16 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryRxDataService }  from './in-memory-rxdata.service';
 
 import { AppComponent }  from './app.component';
-import { ChecklistComponent } from './checklist.component';
 import { CaseManagementComponent } from './casemanagement.component';
 import { HomeComponent } from './home.component';
 import { RXDataComponent } from './rx-data.component';
 import { ValuePropComponent } from './value-prop.component';
-import { PatientSummaryComponent } from './patient-summary.component';
-import { WellnessMeasuresComponent } from './wellness-measures.component';
-import { RecommendationTableComponent } from './recommendation-table.component';
+
+import { ChecklistComponent } from './checklist/checklist.component';
+import { PatientSummaryComponent } from './checklist/patient-summary.component';
+import { WellnessMeasuresComponent } from './checklist/wellness-measures.component';
+import { RecommendationTableComponent } from './checklist/recommendation-table.component';
+
 import { SelfAssessmentComponent } from './self-assessment.component';
 
 @NgModule({

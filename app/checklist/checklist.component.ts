@@ -7,11 +7,14 @@ import { RecommendationTableComponent } from './recommendation-table.component';
     moduleId: module.id,
     selector: 'checklist',
     template: `
-        <patient-summary></patient-summary>
+        <div class="row">
+            <patient-summary class="col-md-6"></patient-summary>
+            <wellness-measures class="col-md-6"></wellness-measures>
+        </div>
         <hr>
-        <wellness-measures></wellness-measures>
-        <hr>
-        <recommendation-table></recommendation-table>
+        <div class = "row">
+            <recommendation-table></recommendation-table>
+        </div>
         `
 })
 

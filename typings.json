@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "d3-axis": "registry:npm/d3-axis#1.0.0+20160701011035"
+  }
+}

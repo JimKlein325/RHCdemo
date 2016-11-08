@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 import * as d3Scale from 'd3-scale';
-// import * as d3Axis from 'd3-axis';
+import * as d3Axis from 'd3-axis';
 
 @Component({
     selector: 'wellness-measures',
@@ -40,27 +40,30 @@ export class WellnessMeasuresComponent implements OnInit{
                 .domain([0, 100])
                 .range([0, width]);
             //categorical scale
+            let categories = this.data.map(function(d) { return d.metricName });
             let catScale = d3Scale.scaleBand()
-                .domain(this.data.map(function(d) { return d.metricName }))
+                .domain(categories)
                 .range([0, height])
                 .paddingInner(0.4)
                 .paddingOuter(0.2);
+
             // Define Axes
-            // let yAxis = d3.axisLeft()
-            //     .scale(catScale)
+            let yAxis = d3Axis.axisLeft(catScale)
+                .tickSize(0);
 
-            // graph.append("g")
-            //     .attr("class", "axis")
-            //     .call(yAxis);
-
+            let vertGuide = graph.append("g")
+                .attr("class", "axis")
+            yAxis(vertGuide);
+            
             // Draw rectangles
             graph.selectAll("rect")
                 .data(this.data)
                 .enter().append("rect")
                 .attr("height", catScale.bandwidth())
+                .attr("fill", "blue")
                 .attr("y", function(d) {
-                    return catScale(d.metricName)
+                    return catScale(d.metricName);
                 })
-                .attr("width", function(d) { return xScale(d.metricScore) })
+                .attr("width", function(d) { return xScale(d.metricScore) });
         }
 }
