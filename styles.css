@@ -18,6 +18,7 @@ body, input[text], button {
 }
 .main {
   margin: 2em;
+  width: 100%;
 }
 a {
   cursor: pointer;
