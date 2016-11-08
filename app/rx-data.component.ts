@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RxRecord } from './rx-record.model';
-import { RxDataService } from './rx-data.service';
+import { RxRecord }          from './rx-record.model';
+import { RxDataService }     from './rx-data.service';
 
 @Component({
     moduleId: module.id,

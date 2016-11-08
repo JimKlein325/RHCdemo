@@ -2,8 +2,13 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { RxDataService } from './rx-data.service';
+import { HttpModule }    from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
+// Imports for loading/configuring in-memory-web-api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryRxDataService }  from './in-memory-rxdata.service';
 
 import { AppComponent }  from './app.component';
 import { ChecklistComponent } from './checklist.component';
@@ -20,7 +25,9 @@ import { SelfAssessmentComponent } from './self-assessment.component';
   imports:      [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryRxDataService)
      ],
   declarations: [
     AppComponent,
