@@ -1,4 +1,8 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { WELLNESSMEASURES } from './checklist/mock-wellness-measures';
+import { PATIENTSUM } from './checklist/mock-patient-summary';
+import { RECOMMENDATIONS } from './checklist/mock-recommendations';
+
 export class InMemoryRxDataService implements InMemoryDbService {
   createDb() {
     let rxdata = [
@@ -24,6 +28,15 @@ export class InMemoryRxDataService implements InMemoryDbService {
       {rxClass: 'oncologics', rxName: 'drug_05', ptId: 20, ptName: 'Ginger Rows', drId: 4, drName: 'Dr. Khann', state: 'OR', city: 'Portland', zip: 97222},
       {rxClass: 'oncologics', rxName: 'drug_05', ptId: 21, ptName: 'Willy Silly', drId: 4, drName: 'Dr. Khann', state: 'OR', city: 'Portland', zip: 97222}
     ];
-    return {rxdata};
+    let wellnessMeasures = WELLNESSMEASURES;
+    let patientSum = PATIENTSUM; 
+    let recommendations = RECOMMENDATIONS; 
+
+    return {
+      rxdata, 
+      wellnessMeasures,
+      patientSum,
+      recommendations    
+    };
   }
 }
