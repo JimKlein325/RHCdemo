@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 
-import { RecommendationTableService } from './recommendation-table.service';
+import { ChecklistDataService } from './checklist-data.service';
 
 @Component({
     selector: 'recommendation-table',
@@ -25,11 +25,11 @@ import { RecommendationTableService } from './recommendation-table.service';
             </tr>
         </table>
     `,
-    providers: [RecommendationTableService]
+    providers: [ChecklistDataService]
 })
 export class RecommendationTableComponent implements OnInit {
     data: any[] = [];
-    constructor(private recService: RecommendationTableService) {}
+    constructor(private recService: ChecklistDataService) {}
     ngOnInit(): void {
         this.recService.getRecommendations().then(function(recs){
             for(let i = 0; i < recs.length; i++) {
