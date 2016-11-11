@@ -14,7 +14,8 @@ export class CaseManagementService {
      getPatient(disease:any){   
         var patientList:any= [];
         this.http.get("http://congress.api.sunlightfoundation.com/legislators/locate?apikey=574d4a17eab649a3ab73359ddf16a885&zip="+disease).toPromise()
-        .then(function(response) {
+        .then(function(response)
+        {
            var list = response.json().results;
            if(list){
             for(var i =0; i<list.length; i++){
@@ -26,7 +27,20 @@ export class CaseManagementService {
                patientList.push(newPatient); 
            }
         }    
-     }); 
+     }).catch(this.handleError); 
      return patientList;
     }
+  private handleError (error: any) {
+  debugger;
+  let errMsg: string;
+  if (error) {
+    const body = error.json() || '';
+    const err = body.error || JSON.stringify(body);
+    errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+  } else {
+    errMsg = error.message ? error.message : error.toString();
+  }
+  console.error(errMsg);
+  return Promise.reject(errMsg);
+}
 }
