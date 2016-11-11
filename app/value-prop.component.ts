@@ -10,7 +10,7 @@ import * as d3 from 'd3';
     <div id='value-prop-main'>
       <h1>Value Proposition</h1>
       <h2>You could be losing the opportunity to earn up to $100,000.</h2>
-      <div style='float: left; margin-right: 40px;'>
+      <div style='float: left; margin-right: 40px; margin-top: 20px;'>
         <p>How many CQMs do they report?</p>
         <div id='recentia' class='bar'></div>
         <br>

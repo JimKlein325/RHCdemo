@@ -174,3 +174,7 @@ td.cqm, td.cgp, td.exc {
   text-align: center;
 }
 
+/* turn off stupid border box sizing */
+* {
+  box-sizing: content-box;
+}

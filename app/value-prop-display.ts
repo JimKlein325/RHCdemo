@@ -149,6 +149,7 @@ export class ValuePropDisplay {
       .append('p')
         .style('text-align', 'center')
         .style('color', 'white')
+        .style('margin-top', '15px')
         .text(knownReported.length === 0 ? '' : knownReported.length);
     last =  unknownUnreported.length === 0 && knownUnreported.length === 0;
     first = knownReported.length === 0;
@@ -185,6 +186,7 @@ export class ValuePropDisplay {
       .append('p')
         .style('text-align', 'center')
         .style('color', 'white')
+        .style('margin-top', '15px')
         .text(unknownReported.length === 0 ? '' : unknownReported.length);
     last = knownUnreported.length === 0;
     first =  knownReported.length === 0 && unknownReported.length === 0;
@@ -221,6 +223,7 @@ export class ValuePropDisplay {
       .append('p')
         .style('text-align', 'center')
         .style('color', 'white')
+        .style('margin-top', '15px')
         .text(unknownUnreported.length === 0 ? '' : unknownUnreported.length);
     first = knownReported.length === 0 && knownUnreported.length === 0 && unknownReported.length === 0;
     bar.append('div')
@@ -256,6 +259,7 @@ export class ValuePropDisplay {
       .append('p')
         .style('text-align', 'center')
         .style('color', 'white')
+        .style('margin-top', '15px')
         .text(knownUnreported.length === 0 ? '' : knownUnreported.length);
     if ((unknownUnreported.length + knownUnreported.length) * ratio - 4 > 0) {
       div.append('div')
