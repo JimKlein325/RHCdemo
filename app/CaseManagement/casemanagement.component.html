@@ -13,6 +13,6 @@
     <h2>Patient List</h2>
     <ul *ngIf="patientList">
         
-        <li  *ngFor="let patient of patientList">Name: {{patient.name}}</li>
+        <li  *ngFor="let patient of patientList">Name: {{patient.name}} {{patient.physician}}</li>
     </ul>
 </div>
