@@ -1,0 +1,18 @@
+<h1>Case Search</h1>
+<div>
+    <form (ngSubmit)="getDiseaseInput(disease)"  #form="ngForm" >
+        <div class="form-group">
+            <label for="disease">Look up Patients for disease</label>
+            <input type="text" required name="disease" #disease ngModel placeholder="enter disease here">
+            <button type="submit" class="btn btn-info">Search</button>
+        </div>
+        
+    </form>
+</div>
+<div>
+    <h2>Patient List</h2>
+    <ul *ngIf="patientList">
+        
+        <li  *ngFor="let patient of patientList">Name: {{patient.name}} {{patient.physician}}</li>
+    </ul>
+</div>

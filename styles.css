@@ -165,3 +165,12 @@ nav a.router-link-active {
 .drugClass {
   color: steelblue;
 }
+
+th, td {
+  padding: 15px;
+}
+
+td.cqm, td.cgp, td.exc {
+  text-align: center;
+}
+
