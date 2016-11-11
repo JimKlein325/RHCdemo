@@ -9,7 +9,8 @@ export class CaseManagementService {
     
     constructor(private http: Http){}
     
-    
+    //using test api; needs to be updated when the api call to get Patient info is ready. and the newPatient should be updated according to the model.
+
      getPatient(disease:any){   
         var patientList:any= [];
         this.http.get("http://congress.api.sunlightfoundation.com/legislators/locate?apikey=574d4a17eab649a3ab73359ddf16a885&zip="+disease).toPromise()
@@ -26,7 +27,6 @@ export class CaseManagementService {
            }
         }    
      }); 
-     console.log(patientList);
      return patientList;
     }
 }
