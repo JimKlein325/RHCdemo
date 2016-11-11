@@ -26,8 +26,7 @@ import { SelfAssessmentComponent } from './self-assessment.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryRxDataService)
+    HttpModule
      ],
   declarations: [
     AppComponent,

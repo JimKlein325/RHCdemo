@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ValuePropDisplay } from './value-prop-display';
+import { ValuePropDataService } from './value-prop-data.service';
 import * as d3 from 'd3';
 
 @Component({
   selector: 'value-prop',
+  providers: [ValuePropDataService],
   template: `
     <div id='value-prop-main'>
       <h1>Value Proposition</h1>
@@ -26,6 +28,8 @@ import * as d3 from 'd3';
   styles: ['.bar { width: 300px;}']
 })
 export class ValuePropComponent {
+  constructor(private vpds: ValuePropDataService) { }
+
   ngOnInit() {
     let display = new ValuePropDisplay();
     let div = d3.select('#recentia');

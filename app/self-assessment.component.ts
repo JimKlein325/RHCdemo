@@ -1,9 +1,11 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ValuePropDisplay } from './value-prop-display';
+import { ValuePropDataService } from './value-prop-data.service';
 import * as d3 from 'd3';
 
 @Component({
   selector: 'self-assessment',
+  providers: [ValuePropDataService],
   outputs: ['onBack'],
   template: `
     <h1>Self Assessment</h1>
@@ -50,41 +52,12 @@ export class SelfAssessmentComponent {
   public checkedCQMs: any;
   public onBack: EventEmitter<any>;
   private display: ValuePropDisplay;
-  constructor() {
+
+  constructor(private vpds: ValuePropDataService) {
     this.onBack = new EventEmitter();
     this.display = new ValuePropDisplay();
   }
   ngOnInit() {
-    this.vendors = [
-      {name: 'vendor01', reports: ['CQM01', 'CQM02']},
-      {name: 'vendor02', reports: ['CQM01']},
-      {name: 'vendor03', reports: ['CQM01', 'CQM02', 'CQM03', 'CQM04']},
-      {name: 'vendor04', reports: []}
-    ];
-    this.CQMs = [
-      {name: 'CQM01', text: 'be sure to do the thing'},
-      {name: 'CQM02', text: 'do all the things'},
-      {name: 'CQM03', text: 'do not forget about the other thing'},
-      {name: 'CQM04', text: 'did you do it?'},
-      {name: 'CQM05', text: 'be sure to do the thing'},
-      {name: 'CQM06', text: 'do all the things'},
-      {name: 'CQM07', text: 'do not forget about the other thing'},
-      {name: 'CQM08', text: 'did you do it?'},
-      {name: 'CQM09', text: 'be sure to do the thing'},
-      {name: 'CQM10', text: 'do all the things'},
-      {name: 'CQM11', text: 'do not forget about the other thing'},
-      {name: 'CQM12', text: 'did you do it?'}
-    ];
-    let checked = localStorage.getItem('checked');
-    if(checked === null) {
-      this.checkedCQMs = {};
-      for (let CQM of this.CQMs) {
-        this.checkedCQMs[CQM.name] = {known: false, reported: false};
-      }
-      localStorage.setItem('checked', JSON.stringify(this.checkedCQMs));
-    } else {
-      this.checkedCQMs = JSON.parse(checked);
-    }
     let ven = localStorage.getItem('vendor');
     if(ven === null) {
       this.vendorIndex = 0;
@@ -92,7 +65,23 @@ export class SelfAssessmentComponent {
     } else {
       this.vendorIndex = parseInt(ven);
     }
-    this.drawChart();
+    let c = this;
+    this.vpds.getData().subscribe(function(response: any) {
+      let data = response.json();
+      c.vendors = data.vendors;
+      c.CQMs = data.CQMs;
+      let checked = localStorage.getItem('checked');
+      if(checked === null) {
+        c.checkedCQMs = {};
+        for (let CQM of c.CQMs) {
+          c.checkedCQMs[CQM.name] = {known: false, reported: false};
+        }
+        localStorage.setItem('checked', JSON.stringify(this.checkedCQMs));
+      } else {
+        c.checkedCQMs = JSON.parse(checked);
+      }
+      c.drawChart();
+    });
   }
   chooseVendor(vendorName: string) {
     for (let i = 0; i < this.vendors.length; i++) {
