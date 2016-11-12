@@ -1,7 +1,8 @@
 import * as d3 from 'd3';
+import { ValuePropDataService } from './value-prop-data.service';
 
 export class ValuePropDisplay {
-  constructor() {}
+  constructor(private vpds: ValuePropDataService) { }
   showChartSimple(data: any, div: any, max = 64) {
     let name = data.name;
     let value = data.value;
@@ -278,6 +279,10 @@ export class ValuePropDisplay {
         .style('text-align', 'center')
         .text('not reported by your current vendor');
     }
-    d3.select('#uncredited').text(unknownReported.length + knownUnreported.length + unknownUnreported.length);
+    let numUncredited = unknownReported.length + knownUnreported.length + unknownUnreported.length;
+    d3.select('#uncredited').text(numUncredited);
+    this.vpds.getDollars(numUncredited).subscribe(function(r: number) {
+      d3.select('#dollar-value').text(r-480);
+    });
   }
 }

@@ -11,7 +11,10 @@ import * as d3 from 'd3';
     <h1>Self Assessment</h1>
     <div style='width: 300px; height: 330px; float: right; margin-left: 30px; margin-right: 30px;'>
       <div id='breakdown'></div>
-      <p>There are a total of <span id='uncredited'>64</span> clinical quality measures for which you are not being credited.</p>
+      <p style='margin-top: 15px;'>There are a total of <span id='uncredited'>64</span>
+        clinical quality measures for which you are not being credited. That could be worth up to
+        <span id='dollar-value'>100</span> thousand dollars.
+      </p>
       <button (click)='back()'>Back</button>
     </div>
     <p>Check the box in the left column for any CQM that you will always remember.</p>
@@ -55,7 +58,7 @@ export class SelfAssessmentComponent {
 
   constructor(private vpds: ValuePropDataService) {
     this.onBack = new EventEmitter();
-    this.display = new ValuePropDisplay();
+    this.display = new ValuePropDisplay(this.vpds);
   }
   ngOnInit() {
     let ven = localStorage.getItem('vendor');

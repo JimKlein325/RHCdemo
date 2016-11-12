@@ -31,16 +31,28 @@ export class ValuePropComponent {
   constructor(private vpds: ValuePropDataService) { }
 
   ngOnInit() {
-    let display = new ValuePropDisplay();
+    let display = new ValuePropDisplay(this.vpds);
     let div = d3.select('#recentia');
     let div2 = d3.select('#competitor');
     display.showChartSimple({name: 'Recentia', value: 64, dollars: 580}, div);
-    display.showAnimatedChart([
-      {name: 'vendor01', value: 30, dollars: 500},
-      {name: 'vendor02', value: 20, dollars: 495},
-      {name: 'vendor03', value: 50, dollars: 540},
-      {name: 'vendor04', value: 10, dollars: 490}
-    ], div2);
+    let vendors: any[];
+    let VPDS = this.vpds;
+    this.vpds.getData().subscribe(function(r: any) {
+      let data = r.json();
+      let vendors = data.vendors;
+      let competitors: any[];
+      competitors = [];
+      for(let i=0; i<vendors.length; i++) {
+        let val = vendors[i].reports.length;
+        competitors.push({name: vendors[i].name, value: val, dollars: null});
+        VPDS.getDollars(val).subscribe(function(r: number) {
+          competitors[i]['dollars'] = r;
+          if(i === vendors.length - 1) {
+            display.showAnimatedChart(competitors, div2);
+          }
+        });
+      }
+    });
   }
   takeAssessment() {
     d3.select('#value-prop-main').style('display', 'none');

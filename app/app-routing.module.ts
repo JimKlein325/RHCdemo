@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { ChecklistComponent } from './checklist/checklist.component';
 import { CaseManagementComponent } from './CaseManagement/casemanagement.component';
 
