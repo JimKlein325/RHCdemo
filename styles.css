@@ -178,3 +178,68 @@ td.cqm, td.cgp, td.exc {
 * {
   box-sizing: content-box;
 }
+
+/* Value Proposition Styles */
+.bar {
+  width: 300px;
+}
+
+.vp-chart-background {
+  background-color: lightgray;
+  border: 2px solid gray;
+  color: white;
+}
+
+.animated-bar {
+  background-color: olive;
+}
+
+.recentia {
+  background-color: steelblue;
+}
+
+.kr {
+  background-color: #0c0;
+}
+
+.ur {
+  background-color: #dd1;
+}
+
+.uu {
+  background-color: #e80;
+}
+
+.ku {
+  background-color: #f20;
+}
+
+.chart-tooltip {
+  border-radius: 5px;
+  background-color: #448;
+  color: white;
+  text-align: center;
+}
+
+#value-prop-main p {
+  max-width: 900px;
+}
+
+#breakdown {
+  width: 300px;
+}
+
+td, th {
+  border: 1px solid gray;
+  padding: 5px;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+}

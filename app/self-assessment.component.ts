@@ -9,44 +9,41 @@ import * as d3 from 'd3';
   outputs: ['onBack'],
   template: `
     <h1>Self Assessment</h1>
-    <div style='width: 300px; height: 330px; float: right; margin-left: 30px; margin-right: 30px;'>
-      <div id='breakdown'></div>
-      <p style='margin-top: 15px;'>There are a total of <span id='uncredited'>64</span>
-        clinical quality measures for which you are not being credited. That could be worth up to
-        <span id='dollar-value'>100</span> thousand dollars.
-      </p>
-      <button (click)='back()'>Back</button>
+    <div style='max-width: 1000px'>
+      <div style='width: 300px; float: right; margin-left: 30px; margin-right: 30px;'>
+        <div id='breakdown'></div>
+        <p style='margin-top: 15px;'>There are a total of <span id='uncredited'>64</span>
+          clinical quality measures for which you are not being credited. That could be worth up to
+          <span id='dollar-value'>100</span> thousand dollars.
+        </p>
+        <button (click)='back()'>Back</button>
+      </div>
+      <p>Check the box in the left column for any CQM that you will always remember.</p>
+      <div style='max-height: 400px; overflow-y: scroll; border: 2px solid gray;'>
+        <table>
+          <tr>
+            <th></th>
+            <th>
+              Reported by
+              <select name='vendor' (change)='chooseVendor($event.target.value)'>
+                <option value='{{vendor.name}}' *ngFor='let vendor of vendors' [selected]='vendors[vendorIndex].name === vendor.name ? true : null'>
+                  {{vendor.name}}
+                </option>
+              </select>
+            </th>
+            <th>Measure Code</th>
+            <th>Measure</th>
+          </tr>
+          <tr *ngFor='let CQM of CQMs'>
+            <td><input type='checkbox' [(ngModel)]='checkedCQMs[CQM.name].known' (click)='drawChart()'></td>
+            <td>{{vendors[vendorIndex].reports.indexOf(CQM.name) != -1 ? 'yes' : 'no'}}</td>
+            <td>{{CQM.name}}</td>
+            <td>{{CQM.text}}</td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <p>Check the box in the left column for any CQM that you will always remember.</p>
-    <div style='max-height: 400px; overflow-y: scroll; border: 2px solid gray;'>
-      <table>
-        <tr>
-          <th></th>
-          <th>
-            Reported by
-            <select name='vendor' (change)='chooseVendor($event.target.value)'>
-              <option value='{{vendor.name}}' *ngFor='let vendor of vendors' [selected]='vendors[vendorIndex].name === vendor.name ? true : null'>
-                {{vendor.name}}
-              </option>
-            </select>
-          </th>
-          <th>Measure Code</th>
-          <th>Measure</th>
-        </tr>
-        <tr *ngFor='let CQM of CQMs'>
-          <td><input type='checkbox' [(ngModel)]='checkedCQMs[CQM.name].known' (click)='drawChart()'></td>
-          <td>{{vendors[vendorIndex].reports.indexOf(CQM.name) != -1 ? 'yes' : 'no'}}</td>
-          <td>{{CQM.name}}</td>
-          <td>{{CQM.text}}</td>
-        </tr>
-      </table>
-    </div>
-  `,
-  styles: [ '#breakdown {width: 300px;}',
-            'td, th {border: 1px solid gray; padding: 5px; text-align: center}',
-            'table {border-collapse: collapse; width: 100%;}',
-            'tr:nth-child(even) {background-color: lightgray}'
-          ]
+  `
 })
 export class SelfAssessmentComponent {
   public vendors: any[];

@@ -24,8 +24,7 @@ import * as d3 from 'd3';
     <div id='assessment' style='display: none;'>
       <self-assessment (onBack)='finishAssessment()'></self-assessment>
     </div>
-  `,
-  styles: ['.bar { width: 300px;}']
+  `
 })
 export class ValuePropComponent {
   constructor(private vpds: ValuePropDataService) { }
@@ -34,12 +33,13 @@ export class ValuePropComponent {
     let display = new ValuePropDisplay(this.vpds);
     let div = d3.select('#recentia');
     let div2 = d3.select('#competitor');
-    display.showChartSimple({name: 'Recentia', value: 64, dollars: 580}, div);
     let vendors: any[];
     let VPDS = this.vpds;
     this.vpds.getData().subscribe(function(r: any) {
       let data = r.json();
       let vendors = data.vendors;
+      let numCQMs = data.CQMs.length;
+      display.showChartSimple({name: 'Recentia', value: numCQMs, dollars: 580}, div, numCQMs);
       let competitors: any[];
       competitors = [];
       for(let i=0; i<vendors.length; i++) {
@@ -48,7 +48,7 @@ export class ValuePropComponent {
         VPDS.getDollars(val).subscribe(function(r: number) {
           competitors[i]['dollars'] = r;
           if(i === vendors.length - 1) {
-            display.showAnimatedChart(competitors, div2);
+            display.showAnimatedChart(competitors, div2, 0, numCQMs);
           }
         });
       }
