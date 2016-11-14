@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { RxDataService } from './rx-data.service';
 import { HttpModule }    from '@angular/http';
+import { RxDataFilter }  from './rx-data-filter.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -14,6 +15,7 @@ import { AppComponent }  from './app.component';
 import { CaseManagementComponent } from './casemanagement.component';
 import { HomeComponent } from './home.component';
 import { RXDataComponent } from './rx-data.component';
+import { RxDataFilterPipe }      from './rx-data-filter.pipe';
 import { ValuePropComponent } from './value-prop.component';
 
 import { ChecklistComponent } from './checklist/checklist.component';
@@ -37,11 +39,13 @@ import { SelfAssessmentComponent } from './self-assessment.component';
     CaseManagementComponent,
     HomeComponent,
     RXDataComponent,
+    RxDataFilterPipe,
     ValuePropComponent,
     PatientSummaryComponent,
     WellnessMeasuresComponent,
     RecommendationTableComponent,
-    SelfAssessmentComponent
+    SelfAssessmentComponent,
+    RxDataFilterPipe
    ],
    providers: [ RxDataService ],
    bootstrap:    [ AppComponent ]
