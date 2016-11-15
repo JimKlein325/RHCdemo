@@ -6,7 +6,6 @@ import { RxDataFilterPipe }  from './rx-data-filter.pipe';
 @Component({
     moduleId: module.id,
     selector: 'rx-data',
-    // pipes: [RxDataFilter],
     template: `
       <h1>{{title}}</h1>
 
