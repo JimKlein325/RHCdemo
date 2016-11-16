@@ -1,17 +1,20 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RxDataService } from './rx-data.service';
-import {FormsModule} from "@angular/forms";
+import { RxDataFilter }  from './rx-data-filter.component';
+
+import { FormsModule } from "@angular/forms";
 import { HttpModule, JsonpModule  }    from '@angular/http';
+
 import { AppRoutingModule } from './app-routing.module';
 // Imports for loading/configuring in-memory-web-api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryRxDataService }  from './in-memory-rxdata.service';
+
 import { AppComponent }  from './app.component';
 import { CaseManagementComponent } from './CaseManagement/casemanagement.component';
-import {CaseManagementService} from './CaseManagement/casemanagement.service';
+import { CaseManagementService } from './CaseManagement/casemanagement.service';
 import { HomeComponent } from './home.component';
 import { RXDataComponent } from './rx-data.component';
+import { RxDataFilterPipe }      from './rx-data-filter.pipe';
 import { ValuePropComponent } from './value-prop.component';
 import { ChecklistComponent } from './checklist/checklist.component';
 import { PatientSummaryComponent } from './checklist/patient-summary.component';
@@ -26,7 +29,7 @@ import { SelfAssessmentComponent } from './self-assessment.component';
     FormsModule,
     HttpModule,
     JsonpModule ,
-    InMemoryWebApiModule.forRoot(InMemoryRxDataService)
+    
      ],
   declarations: [
     AppComponent,
@@ -34,12 +37,13 @@ import { SelfAssessmentComponent } from './self-assessment.component';
     CaseManagementComponent,
     HomeComponent,
     RXDataComponent,
-
+    RxDataFilterPipe,
     ValuePropComponent,
     PatientSummaryComponent,
     WellnessMeasuresComponent,
     RecommendationTableComponent,
-    SelfAssessmentComponent
+    SelfAssessmentComponent,
+    RxDataFilterPipe
    ],
    providers: [ RxDataService, CaseManagementService ],
    bootstrap:    [ AppComponent ]

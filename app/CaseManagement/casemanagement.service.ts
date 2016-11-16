@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Jsonp,Response } from '@angular/http';
 import {Patient} from './patient';
 import 'rxjs/add/operator/toPromise';
 
@@ -11,35 +11,35 @@ export class CaseManagementService {
     
     //using test api; needs to be updated when the api call to get Patient info is ready. and the newPatient should be updated according to the model.
 
-     getPatient(disease:any){   
+     getPatient(disease:any){  
+       
+        var list:any=[];
         var patientList:any= [];
-        this.http.get("http://congress.api.sunlightfoundation.com/legislators/locate?apikey=574d4a17eab649a3ab73359ddf16a885&zip="+disease).toPromise()
+        this.http.get("http://localhost:62122/api/mockdata/"+disease).toPromise()
         .then(function(response)
         {
-           var list = response.json().results;
+           var patient = response.json();
+           list.push(patient);
            if(list){
             for(var i =0; i<list.length; i++){
                var newPatient = new Patient();
-               newPatient.name =list[i].first_name;
-               newPatient.address = list[i].office;
-               newPatient.phoneNumber = list[i].phone;
-               newPatient.physician = list[i].last_name;
+               newPatient.physicianName =list[i].physicianName;
+               newPatient.patientName = list[i].patientName;
+               newPatient.sumText = list[i].sumText;
                patientList.push(newPatient); 
            }
         }    
      }).catch(this.handleError); 
      return patientList;
     }
-  private handleError (error: any) {
-  debugger;
+  private handleError (error: Response) {
+ 
   let errMsg: string;
-  if (error) {
+  if (error instanceof Response) {
     const body = error.json() || '';
     const err = body.error || JSON.stringify(body);
     errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-  } else {
-    errMsg = error.message ? error.message : error.toString();
-  }
+  } 
   console.error(errMsg);
   return Promise.reject(errMsg);
 }
