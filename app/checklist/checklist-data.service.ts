@@ -6,9 +6,9 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ChecklistDataService {
     constructor(private http: Http) {}
-    private wellnessMeasuresUrl = 'app/wellnessMeasures';
-    private recommendationsUrl = 'app/recommendations';
-    private patientSumUrl = 'app/patientSum';
+    private wellnessMeasuresUrl = 'http://localhost:62122/api/mockdata/wellnessmeasures';
+    private recommendationsUrl = 'http://localhost:62122/api/mockdata/recommendations';
+    private patientSumUrl = 'http://localhost:62122/api/mockdata/patientsum';
 
 
 
@@ -18,19 +18,19 @@ export class ChecklistDataService {
     }
 
     getRecommendations(): Promise<any[]> {
-        return this.http.get(this.recommendationsUrl)
+        return this.http.get('http://localhost:62122/api/mockdata/recommendations')
         .toPromise()
         .then(response => response.json().data as any[])
         .catch(this.handleError);
     }
     getPatientSum(): Promise<any> {
-        return this.http.get(this.patientSumUrl)
+        return this.http.get('http://localhost:62122/api/mockdata/patientsum')
         .toPromise()
         .then(response => response.json().data as any)
         .catch(this.handleError);
     }
     getWellnessMeasures(): Promise<any[]> {
-        return this.http.get(this.wellnessMeasuresUrl)
+        return this.http.get('http://localhost:62122/api/mockdata/wellnessmeasures')
         .toPromise()
         .then(response => response.json().data as any[])
         .catch(this.handleError);
