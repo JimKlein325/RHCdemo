@@ -6,7 +6,6 @@ import { RxDataFilterPipe }  from './rx-data-filter.pipe';
 @Component({
     moduleId: module.id,
     selector: 'rx-data',
-    // pipes: [RxDataFilter],
     template: `
       <h1>{{title}}</h1>
 
@@ -32,7 +31,6 @@ import { RxDataFilterPipe }  from './rx-data-filter.pipe';
         </div>
       </form>
 
-
       <br>
 
       <ul class='rx-tabular'>
@@ -56,9 +54,6 @@ export class RXDataComponent implements OnInit {
   ngOnInit(): void {
     this.getRxData();
   }
-
-  /* service - pre-promise -- working */
-  // getRxData(): void { this.rxdata = this.rxDataService.getRxData(); }
 
   /* service w/promise */
   getRxData(): void {
