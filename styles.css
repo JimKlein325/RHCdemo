@@ -174,3 +174,181 @@ th, td {
 td.cqm, td.cgp, td.exc {
   text-align: center;
 }
+
+/* turn off stupid border box sizing */
+* {
+  box-sizing: content-box;
+}
+
+/* Value Proposition Styles */
+.bar {
+  width: 300px;
+}
+
+.vp-chart-background {
+  background-color: lightgray;
+  border: 2px solid gray;
+  color: white;
+}
+
+.animated-bar {
+  background-color: olive;
+}
+
+.recentia {
+  background-color: steelblue;
+}
+
+.kr {
+  background-color: #0c0;
+}
+
+.ur {
+  background-color: #dd1;
+}
+
+.uu {
+  background-color: #e80;
+}
+
+.ku {
+  background-color: #f20;
+}
+
+.chart-tooltip {
+  border-radius: 5px;
+  background-color: #448;
+  color: white;
+  text-align: center;
+}
+
+#value-prop-main p {
+  max-width: 900px;
+}
+
+#breakdown {
+  width: 300px;
+}
+
+td, th {
+  border: 1px solid gray;
+  padding: 5px;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+/* Dose Response Curve */
+
+.line-graph {
+  max-width: 800px;
+  height: 500px;
+  display: block;
+  margin: auto;
+}
+.line-graph h1 {
+  font-family: arial;
+  padding-left: 25px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: normal;
+}
+#graph {
+  width: 100%;
+  height: 100%;
+}
+#legend text {
+  font-family: arial;
+  font-weight: bold;
+}
+#legend text:hover {
+  fill: blue;
+  cursor: pointer;
+}
+
+.out-of-range {
+  fill: #ddd;
+  stroke: black;
+}
+.in-range {
+  fill: #aaf;
+}
+
+.value-tooltip {
+  fill: #448;
+}
+.value-tooltip text {
+  fill: white;
+}
+
+.series-line {
+  stroke-width: 3;
+}
+.series-point {
+  stroke-width: 1.5;
+  cursor: pointer;
+}
+
+
+.series0-line {
+  stroke: red;
+}
+.series0-point {
+  fill: darkred;
+  stroke: red;
+}
+
+.series1-line {
+  stroke: green;
+}
+.series1-point {
+  fill: #002800;
+  stroke: green;
+}
+
+.series2-line {
+  stroke: yellow;
+}
+.series2-point {
+  fill: #cc3;
+  stroke: yellow;
+}
+
+.series3-line {
+  stroke: blue;
+}
+.series3-point {
+  fill: darkblue;
+  stroke: blue;
+}
+
+.series4-line {
+  stroke: magenta;
+}
+.series4-point {
+  fill: darkmagenta;
+  stroke: magenta;
+}
+
+.series5-line {
+  stroke: orange;
+}
+.series5-point {
+  fill: #b70;
+  stroke: orange;
+}
+
+.series6-line {
+  stroke: gray;
+}
+.series6-point {
+  fill: #333;
+  stroke: gray;
+}
