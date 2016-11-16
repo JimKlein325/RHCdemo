@@ -21,6 +21,7 @@ import { PatientSummaryComponent } from './checklist/patient-summary.component';
 import { WellnessMeasuresComponent } from './checklist/wellness-measures.component';
 import { RecommendationTableComponent } from './checklist/recommendation-table.component';
 import { SelfAssessmentComponent } from './self-assessment.component';
+import { LineGraphComponent } from './line-graph.component';
 
 @NgModule({
   imports:      [
@@ -42,7 +43,8 @@ import { SelfAssessmentComponent } from './self-assessment.component';
     WellnessMeasuresComponent,
     RecommendationTableComponent,
     SelfAssessmentComponent,
-    RxDataFilterPipe
+    RxDataFilterPipe,
+    LineGraphComponent
    ],
    providers: [ RxDataService, CaseManagementService ],
    bootstrap:    [ AppComponent ]
