@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
+
 import {CaseManagementService} from './casemanagement.service';
 import {Patient} from './patient';
 @Component({
