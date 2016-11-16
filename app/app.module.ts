@@ -5,8 +5,7 @@ import {FormsModule} from "@angular/forms";
 import { HttpModule, JsonpModule  }    from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 // Imports for loading/configuring in-memory-web-api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryRxDataService }  from './in-memory-rxdata.service';
+
 import { AppComponent }  from './app.component';
 import { CaseManagementComponent } from './CaseManagement/casemanagement.component';
 import {CaseManagementService} from './CaseManagement/casemanagement.service';
@@ -26,7 +25,7 @@ import { SelfAssessmentComponent } from './self-assessment.component';
     FormsModule,
     HttpModule,
     JsonpModule ,
-    InMemoryWebApiModule.forRoot(InMemoryRxDataService)
+    
      ],
   declarations: [
     AppComponent,
