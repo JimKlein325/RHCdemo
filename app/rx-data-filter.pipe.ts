@@ -19,7 +19,6 @@ export class RxDataFilterPipe implements PipeTransform {
         for(let record of input) {
           if (record.state === filterOption) {
             output.push(record);
-            console.log("swtch-st: " + filterModality + ", " + filterOption);
           }
         }
         break;
@@ -29,23 +28,20 @@ export class RxDataFilterPipe implements PipeTransform {
           if (record.city === filterOption) {
             output.push(record);
           }
-          console.log("swtch-ct: " + filterModality + ", " + filterOption);
         }
         break;
 
-        case "zip":
-          for(let record of input) {
-            if (record.zip === Number(filterOption)) {
-              output.push(record);
-            }
-            console.log("swtch-zip: " + filterModality + ", " + filterOption);
+      case "zip":
+        for(let record of input) {
+          if (record.zip === Number(filterOption)) {
+            output.push(record);
           }
-          break;
+        }
+        break;
 
-      case "":
-        output = input;
-    }
-    // console.log("pipe-output.to_s: " + output.toString());
+        case "":
+          output = input;
+      }
     return output;
   }
 }
