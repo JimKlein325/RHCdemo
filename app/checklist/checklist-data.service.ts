@@ -20,19 +20,19 @@ export class ChecklistDataService {
     getRecommendations(): Promise<any[]> {
         return this.http.get('http://localhost:62122/api/mockdata/recommendations')
         .toPromise()
-        .then(response => response.json().data as any[])
+        .then(response => response.json() as any[])
         .catch(this.handleError);
     }
     getPatientSum(): Promise<any> {
         return this.http.get('http://localhost:62122/api/mockdata/patientsum')
         .toPromise()
-        .then(response => response.json().data as any)
+        .then(response => response.json() as any)
         .catch(this.handleError);
     }
     getWellnessMeasures(): Promise<any[]> {
         return this.http.get('http://localhost:62122/api/mockdata/wellnessmeasures')
         .toPromise()
-        .then(response => response.json().data as any[])
+        .then(response => response.json() as any[])
         .catch(this.handleError);
     }
 }

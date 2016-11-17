@@ -42,6 +42,7 @@ export class RecommendationTableComponent implements OnInit {
                     sameElse: 'DD/MM/YYYY'
                 });
             }
+            console.log(recs);
             return Promise.resolve(recs);
         }).then(recs => this.data = recs);
         
