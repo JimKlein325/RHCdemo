@@ -38,7 +38,7 @@ export class ValuePropComponent {
     this.vpds.getData().subscribe(function(r: any) {
       let data = r.json();
       let vendors = data.vendors;
-      let numCQMs = data.CQMs.length;
+      let numCQMs = data.cqms.length;
       display.showChartSimple({name: 'Recentia', value: numCQMs, dollars: 580}, div, numCQMs);
       let competitors: any[];
       competitors = [];

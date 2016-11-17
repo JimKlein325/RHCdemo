@@ -69,7 +69,7 @@ export class SelfAssessmentComponent {
     this.vpds.getData().subscribe(function(response: any) {
       let data = response.json();
       c.vendors = data.vendors;
-      c.CQMs = data.CQMs;
+      c.CQMs = data.cqms;
       let checked = localStorage.getItem('checked');
       if(checked === null) {
         c.checkedCQMs = {};
