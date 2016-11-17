@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 export class ValuePropDataService {
   private request: string;
   constructor(private http: Http) {
-    this.request = 'mock-vp-data.json';
+    this.request = 'http://localhost:62122/api/mockdata/valueprop';
   }
 
   setRequest(newRequest: string) {
