@@ -124,8 +124,4 @@ export class RXDataComponent implements OnInit {
     this.rxDataService.getRxData().then(rxdata => this.rxdata = rxdata);
   }
 
-  onClick(modality, option) {
-
-  }
-
 }
