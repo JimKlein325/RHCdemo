@@ -23,10 +23,10 @@ import { RecommendationTableComponent } from './checklist/recommendation-table.c
 import { SelfAssessmentComponent } from './self-assessment.component';
 import { LineGraphComponent } from './line-graph.component';
 
-/**********************************************************************
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryRxDataService }  from './in-memory-rxdata.service';
-**********************************************************************/
+//**********************************************************************
+ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+ import { InMemoryRxDataService }  from './in-memory-rxdata.service';
+//**********************************************************************
 
 @NgModule({
   imports:      [
@@ -36,9 +36,9 @@ import { InMemoryRxDataService }  from './in-memory-rxdata.service';
     HttpModule,
     JsonpModule
 
-/**********************************************************************
+//**********************************************************************
 ,  InMemoryWebApiModule.forRoot(InMemoryRxDataService)
-**********************************************************************/
+//**********************************************************************
 
      ],
   declarations: [
