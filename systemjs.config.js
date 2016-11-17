@@ -26,7 +26,6 @@
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'd3': 'npm:d3/build/d3.min.js',
       'd3-axis': "npm:d3-axis/build/d3-axis.js",
       'd3-scale': 'npm:d3-scale/build/d3-scale.min.js',
