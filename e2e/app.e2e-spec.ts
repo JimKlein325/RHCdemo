@@ -1,16 +1,14 @@
 import { browser, element, by } from 'protractor';
 
-describe('QuickStart E2E Tests', function () {
-
-  let expectedMsg = 'My First Angular App';
-
+describe('E2E Tests', function () {
 
   beforeEach(function () {
     browser.get('');
   });
 
-  it('should display: ' + expectedMsg, function () {
-    expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
+  it('value prop page should have 2 bars', function () {
+    element.all(by.css('.vp-chart-background')).count();
+    console.log("c");
   });
 
 });

@@ -1,7 +1,8 @@
 import * as d3 from 'd3';
+import { ValuePropDataService } from './value-prop-data.service';
 
 export class ValuePropDisplay {
-  constructor() {}
+  constructor(private vpds: ValuePropDataService) { }
   showChartSimple(data: any, div: any, max = 64) {
     let name = data.name;
     let value = data.value;
@@ -16,22 +17,18 @@ export class ValuePropDisplay {
         .style('padding-bottom', '5px')
         .text(name);
       div.append('div')
+        .attr('class', 'vp-chart-background')
         .style('height', divWidth / 5 + 'px')
         .style('width', max * ratio + 'px')
-        .style('background-color', 'lightgray')
-        .style('border', '2px solid gray')
         .style('border-radius', '10px')
         .append('div')
-          .attr('class', 'animated-bar')
+          .attr('class', 'animated-bar' + (name === 'Recentia' ? ' recentia' : ''))
           .style('height', divWidth / 5 + 'px')
           .style('width', value * ratio + 'px')
-          .style('background-color', name === 'Recentia' ? 'steelblue' : 'olive')
           .style('border-radius', '7.5px')
           .style('border-bottom-left-radius', '7.5px')
-          // .style('box-shadow', '0px 0px 10px 3px ' + (name === 'Recentia' ? '#39668c' : '#616100') + ' inset')
           .append('div')
             .style('padding', divWidth / 25 + 'px')
-            .style('color', 'white')
             .text('$' + dollars + 'K');
       div.append('div')
         .attr('class', 'CQM-label')
@@ -108,10 +105,9 @@ export class ValuePropDisplay {
         .style('border-bottom', '0px');
     }
     let bar = div.append('div')
+      .attr('class', 'vp-chart-background')
       .style('height', divWidth / 5 + 'px')
       .style('width', numTotalCQMs * ratio + 'px')
-      .style('background-color', 'lightgray')
-      .style('border', '2px solid gray')
       .style('border-radius', '10px');
 
     let last = unknownUnreported.length === 0 && unknownReported.length === 0 && knownUnreported.length === 0;
@@ -121,7 +117,6 @@ export class ValuePropDisplay {
       .style('height', 'inherit')
       .style('float', 'left')
       .style('position', 'relative')
-      .style('background-color', '#0c0')
       .style('border-top-right-radius', last ? '7.5px' : '0px')
       .style('border-bottom-right-radius', last ? '7.5px' : '0px')
       .style('border-top-left-radius', '7.5px')
@@ -137,10 +132,7 @@ export class ValuePropDisplay {
           .style('left', '5px')
           .style('top', divWidth / 5 + 5 + 'px')
           .style('padding', '5px')
-          .style('border-radius', '5px')
-          .style('background-color', '#448')
-          .style('color', 'white')
-          .style('text-align', 'center')
+          .attr('class', 'chart-tooltip')
           .text(text);
       })
       .on('mouseout', function() {
@@ -148,7 +140,7 @@ export class ValuePropDisplay {
       })
       .append('p')
         .style('text-align', 'center')
-        .style('color', 'white')
+        .style('margin-top', '15px')
         .text(knownReported.length === 0 ? '' : knownReported.length);
     last =  unknownUnreported.length === 0 && knownUnreported.length === 0;
     first = knownReported.length === 0;
@@ -157,7 +149,6 @@ export class ValuePropDisplay {
       .style('height', 'inherit')
       .style('float', 'left')
       .style('position', 'relative')
-      .style('background-color', '#dd1')
       .style('border-top-right-radius', last ? '7.5px' : '0px')
       .style('border-bottom-right-radius', last ? '7.5px' : '0px')
       .style('border-top-left-radius', first ? '7.5px' : '0px')
@@ -173,10 +164,7 @@ export class ValuePropDisplay {
           .style('left', '5px')
           .style('top', divWidth / 5 + 5 + 'px')
           .style('padding', '5px')
-          .style('border-radius', '5px')
-          .style('background-color', '#448')
-          .style('color', 'white')
-          .style('text-align', 'center')
+          .attr('class', 'chart-tooltip')
           .text(text);
       })
       .on('mouseout', function() {
@@ -184,7 +172,7 @@ export class ValuePropDisplay {
       })
       .append('p')
         .style('text-align', 'center')
-        .style('color', 'white')
+        .style('margin-top', '15px')
         .text(unknownReported.length === 0 ? '' : unknownReported.length);
     last = knownUnreported.length === 0;
     first =  knownReported.length === 0 && unknownReported.length === 0;
@@ -193,7 +181,6 @@ export class ValuePropDisplay {
       .style('height', 'inherit')
       .style('float', 'left')
       .style('position', 'relative')
-      .style('background-color', '#e80')
       .style('border-top-right-radius', last ? '7.5px' : '0px')
       .style('border-bottom-right-radius', last ? '7.5px' : '0px')
       .style('border-top-left-radius', first ? '7.5px' : '0px')
@@ -209,10 +196,7 @@ export class ValuePropDisplay {
           .style('left', '5px')
           .style('top', divWidth / 5 + 5 + 'px')
           .style('padding', '5px')
-          .style('border-radius', '5px')
-          .style('background-color', '#448')
-          .style('color', 'white')
-          .style('text-align', 'center')
+          .attr('class', 'chart-tooltip')
           .text(text);
       })
       .on('mouseout', function() {
@@ -220,7 +204,7 @@ export class ValuePropDisplay {
       })
       .append('p')
         .style('text-align', 'center')
-        .style('color', 'white')
+        .style('margin-top', '15px')
         .text(unknownUnreported.length === 0 ? '' : unknownUnreported.length);
     first = knownReported.length === 0 && knownUnreported.length === 0 && unknownReported.length === 0;
     bar.append('div')
@@ -228,7 +212,6 @@ export class ValuePropDisplay {
       .style('height', 'inherit')
       .style('float', 'left')
       .style('position', 'relative')
-      .style('background-color', '#f20')
       .style('border-top-right-radius', '7.5px')
       .style('border-bottom-right-radius', '7.5px')
       .style('border-top-left-radius', first ? '7.5px' : '0px')
@@ -244,10 +227,7 @@ export class ValuePropDisplay {
           .style('left', '5px')
           .style('top', divWidth / 5 + 5 + 'px')
           .style('padding', '5px')
-          .style('border-radius', '5px')
-          .style('background-color', '#448')
-          .style('color', 'white')
-          .style('text-align', 'center')
+          .attr('class', 'chart-tooltip')
           .text(text);
       })
       .on('mouseout', function() {
@@ -255,7 +235,7 @@ export class ValuePropDisplay {
       })
       .append('p')
         .style('text-align', 'center')
-        .style('color', 'white')
+        .style('margin-top', '15px')
         .text(knownUnreported.length === 0 ? '' : knownUnreported.length);
     if ((unknownUnreported.length + knownUnreported.length) * ratio - 4 > 0) {
       div.append('div')
@@ -274,6 +254,10 @@ export class ValuePropDisplay {
         .style('text-align', 'center')
         .text('not reported by your current vendor');
     }
-    d3.select('#uncredited').text(unknownReported.length + knownUnreported.length + unknownUnreported.length);
+    let numUncredited = unknownReported.length + knownUnreported.length + unknownUnreported.length;
+    d3.select('#uncredited').text(numUncredited);
+    this.vpds.getDollars(numUncredited).subscribe(function(r: number) {
+      d3.select('#dollar-value').text(r-480);
+    });
   }
 }

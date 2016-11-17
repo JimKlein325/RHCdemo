@@ -10,6 +10,7 @@ import * as d3 from 'd3';
                     <a routerLink='/casemanagement' routerLinkActive='active'>Case Management</a>
                     <a routerLink='/rxdata' routerLinkActive='active'>RX Data</a>
                     <a routerLink='/valueprop' routerLinkActive='active'>Value Proposition</a>
+                    <a routerLink='/doseresponse' routerLinkActive='active'>Dose Response Curve</a>
                 </nav>
                 <div class='main'>
                     <router-outlet></router-outlet>

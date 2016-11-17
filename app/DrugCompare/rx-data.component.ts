@@ -10,7 +10,6 @@ import * as d3Axis from 'd3-axis';
 @Component({
     moduleId: module.id,
     selector: 'rx-data',
-    // pipes: [RxDataFilter],
     template: `
       <h1>{{title}}</h1>
 
@@ -31,11 +30,10 @@ import * as d3Axis from 'd3-axis';
             <input type="text" style="width: 100%" placeholder="Enter text..." #option>
           </div>
           <div class='col-sm-2'>
-            <button type='submit'>Submit</button>
+            <button (click)="drawGraph(rxdata)" type='submit'>Submit</button>
           </div>
         </div>
       </form>
-
 
       <br>
 
@@ -62,7 +60,7 @@ export class RXDataComponent implements OnInit {
 
 
 
-  static drawGraph(data: any[]): void{
+   drawGraph(data: any[]): void{
       let margin = {
               left: 200,
               right: 20,
@@ -80,10 +78,10 @@ export class RXDataComponent implements OnInit {
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
           // Add scales for the axes (ignore intellisense, this works fine)
           let yScale = d3Scale.scaleLinear()
-              .domain([0, d3.max(data.map(function(d) { return d.drId } ))])
+              .domain([0, d3.max(data.map(function(d) { return d.ptId } ))])
               .range([height, 0]);
           //categorical scale
-          let categories = data.map(function(d) { return d.ptId });
+          let categories = data.map(function(d) { return d.rxName });
           let catScale = d3Scale.scaleBand()
               .domain(categories)
               .range([0, height])
@@ -110,22 +108,24 @@ export class RXDataComponent implements OnInit {
               .attr("width", catScale.bandwidth())
               .attr("fill", "blue")
               .attr("x", function(d) {
-                  return catScale(d.ptId);
+                  return catScale(d.rxName);
               })
-              .attr("y", function(d) { return height - yScale(d.drId) })
-              .attr("height", function(d) { return yScale(d.drId) });
+              .attr("y", function(d) { return height - yScale(d.ptId) })
+              .attr("height", function(d) { return yScale(d.ptId) });
   }
+
   ngOnInit(): void {
-      this.rxDataService.getRxData()
-          .then(function(d) {
-              RXDataComponent.drawGraph(d);
-          })
+    this.getRxData();
+
   }
 
+  /* service w/promise */
+  getRxData(): void {
+    this.rxDataService.getRxData().then(rxdata => this.rxdata = rxdata);
+  }
 
+  onClick(modality, option) {
 
-
-
-
+  }
 
 }
