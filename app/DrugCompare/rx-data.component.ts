@@ -84,16 +84,11 @@ export class RXDataComponent implements OnInit {
           let yValue = xValue.map(function (k) {
               return ptNum[k];
           });
-          console.log(xValue)
-          console.log(yValue)
 
           let ptData = [];
           for(var i=0; i<xValue.length; i++){
             ptData.push({x: xValue[i], y:yValue[i]});
           }
-          ptData.forEach(function(element) {
-              console.log(element);
-          });
 
           let graph = d3.select(".rx-data")
               .append("svg")
@@ -109,7 +104,6 @@ export class RXDataComponent implements OnInit {
           let yScale = d3Scale.scaleLinear()
               .domain([0, d3.max(ptData.map(function(d) { return d.y } ))])
               .range([0, height]);
-          console.log(d3.max(ptData.map(function(d) { return d.y } )))
           //categorical scale
           let categories = ptData.map(function(d) { return d.x });
           let catScale = d3Scale.scaleBand()
