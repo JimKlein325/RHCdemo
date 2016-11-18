@@ -21,14 +21,15 @@ export class LineGraphComponent {
   }
 
   drawGraph() {
+    let c = this;
     this.drds.getData().subscribe(function(response: any) {
-      let res = response.json();
-      this.data = res.data;
+      let res = c.drds.transformData(response.json());
+      c.data = res.data;
       d3.select('h1').text(res.title);
       let svg = d3.select('#graph');
       svg.selectAll('*').remove();
       let g = new Grapher();
-      g.lineGraph(svg, this.data);
+      g.lineGraph(svg, c.data);
     });
   }
 }
