@@ -114,7 +114,14 @@ export class RXDataComponent implements OnInit {
 
           // Define Axes
           let yAxis = d3Axis.axisLeft(yAxisScale)
-              .tickSize(0);
+              .tickSize(0)
+              .tickFormat(function(e){
+                  if(Math.floor(e) != e)
+                  {
+                      return;
+                  }
+                  return e;
+              });
 
           let xAxis = d3Axis.axisBottom(catScale);
 
