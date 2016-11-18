@@ -11,9 +11,6 @@ export class RxDataFilterPipe implements PipeTransform {
     var filterOption = option;
     var output: RxRecord[] = [];
 
-    console.log("transform: filterMod: " + filterModality);
-    console.log("transform: filterOpt: " + filterOption);
-
     switch(filterModality) {
       case "state":
         for(let record of input) {

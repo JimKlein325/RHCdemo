@@ -70,6 +70,31 @@ export class RXDataComponent implements OnInit {
           let width = 400,
               height = 300;
 
+          let ptNum = data.reduce(function (acc, rx) {
+            if (typeof acc[rx.rxName] == 'undefined') {
+              acc[rx.rxName] = 1;
+            } else {
+              acc[rx.rxName] += 1;
+            }
+
+            return acc;
+          }, {});
+
+          let xValue = Object.keys(ptNum);
+          let yValue = xValue.map(function (k) {
+              return ptNum[k];
+          });
+          console.log(xValue)
+          console.log(yValue)
+
+          let ptData = [];
+          for(var i=0; i<xValue.length; i++){
+            ptData.push({x: xValue[i], y:yValue[i]});
+          }
+          ptData.forEach(function(element) {
+              console.log(element);
+          });
+
           let graph = d3.select(".rx-data")
               .append("svg")
               .attr("width", width + margin.left + margin.right)
@@ -77,11 +102,16 @@ export class RXDataComponent implements OnInit {
               .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
           // Add scales for the axes (ignore intellisense, this works fine)
-          let yScale = d3Scale.scaleLinear()
-              .domain([0, d3.max(data.map(function(d) { return d.ptId } ))])
+          let yAxisScale = d3Scale.scaleLinear()
+              .domain([0, d3.max(ptData.map(function(d) { return d.y } ))])
               .range([height, 0]);
+
+          let yScale = d3Scale.scaleLinear()
+              .domain([0, d3.max(ptData.map(function(d) { return d.y } ))])
+              .range([0, height]);
+          console.log(d3.max(ptData.map(function(d) { return d.y } )))
           //categorical scale
-          let categories = data.map(function(d) { return d.rxName });
+          let categories = ptData.map(function(d) { return d.x });
           let catScale = d3Scale.scaleBand()
               .domain(categories)
               .range([0, height])
@@ -89,7 +119,7 @@ export class RXDataComponent implements OnInit {
               .paddingOuter(0.2);
 
           // Define Axes
-          let yAxis = d3Axis.axisLeft(yScale)
+          let yAxis = d3Axis.axisLeft(yAxisScale)
               .tickSize(0);
 
           let xAxis = d3Axis.axisBottom(catScale);
@@ -103,15 +133,15 @@ export class RXDataComponent implements OnInit {
           xAxis(horiGuide);
           // Draw rectangles
           graph.selectAll("rect")
-              .data(data)
+              .data(ptData)
               .enter().append("rect")
               .attr("width", catScale.bandwidth())
               .attr("fill", "blue")
               .attr("x", function(d) {
-                  return catScale(d.rxName);
+                  return catScale(d.x);
               })
-              .attr("y", function(d) { return height - yScale(d.ptId) })
-              .attr("height", function(d) { return yScale(d.ptId) });
+              .attr("y", function(d) { return height - yScale(d.y) })
+              .attr("height", function(d) { return yScale(d.y) });
   }
 
   ngOnInit(): void {
