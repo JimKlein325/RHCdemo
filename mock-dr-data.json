@@ -1,117 +1,113 @@
-{
-  "title": "Diabetes Treatment Data",
-  "data": [
-    {
-      "name": "LDL cholesterol",
-      "unit": "mg/dL",
-      "refMin": 0,
-      "refMax": 100,
-      "values": [
-        ["1/1/2013", 390],
-        ["1/15/2013", 390],
-        ["2/1/2013", 205],
-        ["2/15/2013", 205],
-        ["3/1/2013", 80],
-        ["3/15/2013", 70],
-        ["4/1/2013", 90],
-        ["4/15/2013", 85]
-      ]
-    },
-    {
-      "name": "HDL cholesterol",
-      "unit": "mg/dL",
-      "refMin": 45,
-      "refMax": 60,
-      "values": [
-        ["1/1/2013", 10],
-        ["1/15/2013", 10],
-        ["2/1/2013", 15],
-        ["2/15/2013", 15],
-        ["3/1/2013", 20],
-        ["3/15/2013", 30],
-        ["4/1/2013", 60],
-        ["4/15/2013", 65]
-      ]
-    },
-    {
-      "name": "AST",
-      "unit": "IU/L",
-      "refMin": 10,
-      "refMax": 34,
-      "values": [
-        ["1/1/2013", 8],
-        ["1/15/2013", 8],
-        ["2/1/2013", 20],
-        ["2/15/2013", 20],
-        ["3/1/2013", 40],
-        ["3/15/2013", 40],
-        ["4/1/2013", 30],
-        ["4/15/2013", 30]
-      ]
-    },
-    {
-      "name": "ALT",
-      "unit": "IU/L",
-      "refMin": 10,
-      "refMax": 40,
-      "values": [
-        ["1/1/2013", 5],
-        ["1/15/2013", 5],
-        ["2/1/2013", 30],
-        ["2/15/2013", 30],
-        ["3/1/2013", 50],
-        ["3/15/2013", 50],
-        ["4/1/2013", 35],
-        ["4/15/2013", 35]
-      ]
-    },
-    {
-      "name": "ALP",
-      "unit": "IU/L",
-      "refMin": 44,
-      "refMax": 147,
-      "values": [
-        ["1/1/2013", 100],
-        ["1/15/2013", 100],
-        ["2/1/2013", 140],
-        ["2/15/2013", 140],
-        ["3/1/2013", 130],
-        ["3/15/2013", 130],
-        ["4/1/2013", 120],
-        ["4/15/2013", 120]
-      ]
-    },
-    {
-      "name": "Bilirubin, Direct",
-      "unit": "mg/dL",
-      "refMin": 0,
-      "refMax": 0.3,
-      "values": [
-        ["1/1/2013", 0.2],
-        ["1/15/2013", 0.2],
-        ["2/1/2013", 0.24],
-        ["2/15/2013", 0.26],
-        ["3/1/2013", 0.34],
-        ["3/15/2013", 0.3],
-        ["4/1/2013", 0.27],
-        ["4/15/2013", 0.28]
-      ]
-    },
-    {
-      "name": "Bilirubin, Total",
-      "unit": "mg/dL",
-      "refMin": 0.3,
-      "refMax": 1.9,
-      "values": [
-        ["1/1/2013", 1.4],
-        ["1/15/2013", 1.6],
-        ["2/1/2013", 1.8],
-        ["2/15/2013", 1.9],
-        ["3/1/2013", 2.4],
-        ["3/15/2013", 2.3],
-        ["4/1/2013", 1.8],
-        ["4/15/2013", 1.7]
-      ]
-    }
-  ]
-}
+[{"PatientID":1,"SourceID":49,"SemanticType":"LabTestResult","ClinicalEvent":"ALP","EventDate":"2013-01-01","ClinicalValue":100.00000,"Units":"IU\/L","ReferenceRangeMin":44.00000,"ReferenceRangeMax":147.00000},
+
+        {"PatientID":1,"SourceID":41,"SemanticType":"LabTestResult","ClinicalEvent":"ALT","EventDate":"2013-01-01","ClinicalValue":5.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":33,"SemanticType":"LabTestResult","ClinicalEvent":"AST","EventDate":"2013-01-01","ClinicalValue":8.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":34.00000},
+
+        {"PatientID":1,"SourceID":25,"SemanticType":"LabTestResult","ClinicalEvent":"HDL Cholesterol","EventDate":"2013-01-01","ClinicalValue":10.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":60.00000},
+
+        {"PatientID":1,"SourceID":17,"SemanticType":"LabTestResult","ClinicalEvent":"LDL Cholesterol","EventDate":"2013-01-01","ClinicalValue":390.00000,"Units":"mg\/dL","ReferenceRangeMin":0.00000,"ReferenceRangeMax":100.00000},
+
+        {"PatientID":1,"SourceID":1,"SemanticType":"Medication","ClinicalEvent":"Rosuvastatin","EventDate":"2013-01-01","ClinicalValue":20.00000,"Units":"mg","ReferenceRangeMin":5.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":9,"SemanticType":"LabTestResult","ClinicalEvent":"Total cholesterol","EventDate":"2013-01-01","ClinicalValue":400.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":200.00000},
+
+        {"PatientID":1,"SourceID":50,"SemanticType":"LabTestResult","ClinicalEvent":"ALP","EventDate":"2013-01-15","ClinicalValue":100.00000,"Units":"IU\/L","ReferenceRangeMin":44.00000,"ReferenceRangeMax":147.00000},
+
+        {"PatientID":1,"SourceID":42,"SemanticType":"LabTestResult","ClinicalEvent":"ALT","EventDate":"2013-01-15","ClinicalValue":5.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":34,"SemanticType":"LabTestResult","ClinicalEvent":"AST","EventDate":"2013-01-15","ClinicalValue":8.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":34.00000},
+
+        {"PatientID":1,"SourceID":26,"SemanticType":"LabTestResult","ClinicalEvent":"HDL Cholesterol","EventDate":"2013-01-15","ClinicalValue":10.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":60.00000},
+
+        {"PatientID":1,"SourceID":18,"SemanticType":"LabTestResult","ClinicalEvent":"LDL Cholesterol","EventDate":"2013-01-15","ClinicalValue":390.00000,"Units":"mg\/dL","ReferenceRangeMin":0.00000,"ReferenceRangeMax":100.00000},
+
+        {"PatientID":1,"SourceID":2,"SemanticType":"Medication","ClinicalEvent":"Rosuvastatin","EventDate":"2013-01-15","ClinicalValue":20.00000,"Units":"mg","ReferenceRangeMin":5.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":10,"SemanticType":"LabTestResult","ClinicalEvent":"Total cholesterol","EventDate":"2013-01-15","ClinicalValue":400.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":200.00000},
+
+        {"PatientID":1,"SourceID":51,"SemanticType":"LabTestResult","ClinicalEvent":"ALP","EventDate":"2013-02-01","ClinicalValue":140.00000,"Units":"IU\/L","ReferenceRangeMin":44.00000,"ReferenceRangeMax":147.00000},
+
+        {"PatientID":1,"SourceID":43,"SemanticType":"LabTestResult","ClinicalEvent":"ALT","EventDate":"2013-02-01","ClinicalValue":30.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":35,"SemanticType":"LabTestResult","ClinicalEvent":"AST","EventDate":"2013-02-01","ClinicalValue":20.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":34.00000},
+
+        {"PatientID":1,"SourceID":27,"SemanticType":"LabTestResult","ClinicalEvent":"HDL Cholesterol","EventDate":"2013-02-01","ClinicalValue":15.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":60.00000},
+
+        {"PatientID":1,"SourceID":19,"SemanticType":"LabTestResult","ClinicalEvent":"LDL Cholesterol","EventDate":"2013-02-01","ClinicalValue":205.00000,"Units":"mg\/dL","ReferenceRangeMin":0.00000,"ReferenceRangeMax":100.00000},
+
+        {"PatientID":1,"SourceID":3,"SemanticType":"Medication","ClinicalEvent":"Rosuvastatin","EventDate":"2013-02-01","ClinicalValue":20.00000,"Units":"mg","ReferenceRangeMin":5.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":11,"SemanticType":"LabTestResult","ClinicalEvent":"Total cholesterol","EventDate":"2013-02-01","ClinicalValue":220.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":200.00000},
+
+        {"PatientID":1,"SourceID":52,"SemanticType":"LabTestResult","ClinicalEvent":"ALP","EventDate":"2013-02-15","ClinicalValue":140.00000,"Units":"IU\/L","ReferenceRangeMin":44.00000,"ReferenceRangeMax":147.00000},
+
+        {"PatientID":1,"SourceID":44,"SemanticType":"LabTestResult","ClinicalEvent":"ALT","EventDate":"2013-02-15","ClinicalValue":30.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":36,"SemanticType":"LabTestResult","ClinicalEvent":"AST","EventDate":"2013-02-15","ClinicalValue":20.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":34.00000},
+
+        {"PatientID":1,"SourceID":28,"SemanticType":"LabTestResult","ClinicalEvent":"HDL Cholesterol","EventDate":"2013-02-15","ClinicalValue":15.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":60.00000},
+
+        {"PatientID":1,"SourceID":20,"SemanticType":"LabTestResult","ClinicalEvent":"LDL Cholesterol","EventDate":"2013-02-15","ClinicalValue":205.00000,"Units":"mg\/dL","ReferenceRangeMin":0.00000,"ReferenceRangeMax":100.00000},
+
+        {"PatientID":1,"SourceID":4,"SemanticType":"Medication","ClinicalEvent":"Rosuvastatin","EventDate":"2013-02-15","ClinicalValue":30.00000,"Units":"mg","ReferenceRangeMin":5.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":12,"SemanticType":"LabTestResult","ClinicalEvent":"Total cholesterol","EventDate":"2013-02-15","ClinicalValue":220.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":200.00000},
+
+        {"PatientID":1,"SourceID":53,"SemanticType":"LabTestResult","ClinicalEvent":"ALP","EventDate":"2013-03-01","ClinicalValue":130.00000,"Units":"IU\/L","ReferenceRangeMin":44.00000,"ReferenceRangeMax":147.00000},
+
+        {"PatientID":1,"SourceID":45,"SemanticType":"LabTestResult","ClinicalEvent":"ALT","EventDate":"2013-03-01","ClinicalValue":50.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":37,"SemanticType":"LabTestResult","ClinicalEvent":"AST","EventDate":"2013-03-01","ClinicalValue":40.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":34.00000},
+
+        {"PatientID":1,"SourceID":29,"SemanticType":"LabTestResult","ClinicalEvent":"HDL Cholesterol","EventDate":"2013-03-01","ClinicalValue":20.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":120.00000},
+
+        {"PatientID":1,"SourceID":21,"SemanticType":"LabTestResult","ClinicalEvent":"LDL Cholesterol","EventDate":"2013-03-01","ClinicalValue":80.00000,"Units":"mg\/dL","ReferenceRangeMin":0.00000,"ReferenceRangeMax":100.00000},
+
+        {"PatientID":1,"SourceID":5,"SemanticType":"Medication","ClinicalEvent":"Rosuvastatin","EventDate":"2013-03-01","ClinicalValue":30.00000,"Units":"mg","ReferenceRangeMin":5.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":13,"SemanticType":"LabTestResult","ClinicalEvent":"Total cholesterol","EventDate":"2013-03-01","ClinicalValue":100.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":200.00000},
+
+        {"PatientID":1,"SourceID":54,"SemanticType":"LabTestResult","ClinicalEvent":"ALP","EventDate":"2013-03-15","ClinicalValue":130.00000,"Units":"IU\/L","ReferenceRangeMin":44.00000,"ReferenceRangeMax":147.00000},
+
+        {"PatientID":1,"SourceID":46,"SemanticType":"LabTestResult","ClinicalEvent":"ALT","EventDate":"2013-03-15","ClinicalValue":50.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":38,"SemanticType":"LabTestResult","ClinicalEvent":"AST","EventDate":"2013-03-15","ClinicalValue":40.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":34.00000},
+
+        {"PatientID":1,"SourceID":30,"SemanticType":"LabTestResult","ClinicalEvent":"HDL Cholesterol","EventDate":"2013-03-15","ClinicalValue":30.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":130.00000},
+
+        {"PatientID":1,"SourceID":22,"SemanticType":"LabTestResult","ClinicalEvent":"LDL Cholesterol","EventDate":"2013-03-15","ClinicalValue":70.00000,"Units":"mg\/dL","ReferenceRangeMin":0.00000,"ReferenceRangeMax":100.00000},
+
+        {"PatientID":1,"SourceID":6,"SemanticType":"Medication","ClinicalEvent":"Rosuvastatin","EventDate":"2013-03-15","ClinicalValue":25.00000,"Units":"mg","ReferenceRangeMin":5.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":14,"SemanticType":"LabTestResult","ClinicalEvent":"Total cholesterol","EventDate":"2013-03-15","ClinicalValue":100.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":200.00000},
+
+        {"PatientID":1,"SourceID":55,"SemanticType":"LabTestResult","ClinicalEvent":"ALP","EventDate":"2013-04-01","ClinicalValue":120.00000,"Units":"IU\/L","ReferenceRangeMin":44.00000,"ReferenceRangeMax":147.00000},
+
+        {"PatientID":1,"SourceID":47,"SemanticType":"LabTestResult","ClinicalEvent":"ALT","EventDate":"2013-04-01","ClinicalValue":35.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":39,"SemanticType":"LabTestResult","ClinicalEvent":"AST","EventDate":"2013-04-01","ClinicalValue":30.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":34.00000},
+
+        {"PatientID":1,"SourceID":31,"SemanticType":"LabTestResult","ClinicalEvent":"HDL Cholesterol","EventDate":"2013-04-01","ClinicalValue":60.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":110.00000},
+
+        {"PatientID":1,"SourceID":23,"SemanticType":"LabTestResult","ClinicalEvent":"LDL Cholesterol","EventDate":"2013-04-01","ClinicalValue":90.00000,"Units":"mg\/dL","ReferenceRangeMin":0.00000,"ReferenceRangeMax":100.00000},
+
+        {"PatientID":1,"SourceID":7,"SemanticType":"Medication","ClinicalEvent":"Rosuvastatin","EventDate":"2013-04-01","ClinicalValue":25.00000,"Units":"mg","ReferenceRangeMin":5.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":15,"SemanticType":"LabTestResult","ClinicalEvent":"Total cholesterol","EventDate":"2013-04-01","ClinicalValue":150.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":200.00000},
+
+        {"PatientID":1,"SourceID":56,"SemanticType":"LabTestResult","ClinicalEvent":"ALP","EventDate":"2013-04-15","ClinicalValue":120.00000,"Units":"IU\/L","ReferenceRangeMin":44.00000,"ReferenceRangeMax":147.00000},
+
+        {"PatientID":1,"SourceID":48,"SemanticType":"LabTestResult","ClinicalEvent":"ALT","EventDate":"2013-04-15","ClinicalValue":35.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":40,"SemanticType":"LabTestResult","ClinicalEvent":"AST","EventDate":"2013-04-15","ClinicalValue":30.00000,"Units":"IU\/L","ReferenceRangeMin":10.00000,"ReferenceRangeMax":34.00000},
+
+        {"PatientID":1,"SourceID":32,"SemanticType":"LabTestResult","ClinicalEvent":"HDL Cholesterol","EventDate":"2013-04-15","ClinicalValue":65.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":115.00000},
+
+        {"PatientID":1,"SourceID":24,"SemanticType":"LabTestResult","ClinicalEvent":"LDL Cholesterol","EventDate":"2013-04-15","ClinicalValue":85.00000,"Units":"mg\/dL","ReferenceRangeMin":0.00000,"ReferenceRangeMax":100.00000},
+
+        {"PatientID":1,"SourceID":8,"SemanticType":"Medication","ClinicalEvent":"Rosuvastatin","EventDate":"2013-04-15","ClinicalValue":25.00000,"Units":"mg","ReferenceRangeMin":5.00000,"ReferenceRangeMax":40.00000},
+
+        {"PatientID":1,"SourceID":16,"SemanticType":"LabTestResult","ClinicalEvent":"Total cholesterol","EventDate":"2013-04-15","ClinicalValue":150.00000,"Units":"mg\/dL","ReferenceRangeMin":60.00000,"ReferenceRangeMax":200.00000}
+
+]
