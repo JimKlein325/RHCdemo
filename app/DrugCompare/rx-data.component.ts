@@ -85,7 +85,7 @@ export class RXDataComponent implements OnInit {
               return ptNum[k];
           });
 
-          let ptData = [];
+          let ptData: any[] = [];
           for(var i=0; i<xValue.length; i++){
             ptData.push({x: xValue[i], y:yValue[i]});
           }
